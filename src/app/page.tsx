@@ -1,38 +1,25 @@
-import { Movie } from '@/type';
 import MovieList from './components/MovieList';
 
-const fetchTrendingMovies = async (): Promise<Movie[]> => {
-  const response = await fetch(
-    'https://api.themoviedb.org/3/trending/movie/day?api_key=YOUR_API_KEY',
-  );
-  const data = await response.json();
-  return data.results;
-};
+const API_KEY =
+  'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YmI2Y2JjOWRlMDE3MjhjMTI1MGI0NjhlNWZmZGE5NSIsIm5iZiI6MTcyNDU0ODg5OS4wOTY3OCwic3ViIjoiNjYzOGJlZmVjOTA1NGYwMTJhOTE0ZTZiIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.uRKGHt-G275vGj2yyXMxDTemRdDZQ8D8ZonoeaxsG6g';
 
-export const getServerSideProps = async () => {
-  const movies = await fetchTrendingMovies();
-  return {
-    props: {
-      movies,
+const API_URL = 'https://api.themoviedb.org/3/trending/movie/day';
+
+const Home = async () => {
+  const data = await fetch(API_URL, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${API_KEY}`,
+      'Content-Type': 'application/json',
     },
-  };
-};
-
-interface HomeProps {
-  movies: Movie[];
-}
-
-export default function Home({ movies }: HomeProps) {
+  });
+  const movies = await data.json();
   return (
-    // <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-
-    // </main>
-    // <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-
-    // </footer>
     <main>
       <h1>Trending today</h1>
-      <MovieList movies={movies} />
+      <MovieList movies={movies.results} />
     </main>
   );
-}
+};
+
+export default Home;

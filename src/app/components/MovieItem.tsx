@@ -16,6 +16,7 @@ const MovieItem = ({ id, backdrop_path, title }: MovieItemProps) => {
           src={`https://image.tmdb.org/t/p/w300${backdrop_path}`}
           alt={title}
           height={300}
+          width={200}
         />
       ) : (
         <div>{/* <BiSolidCameraMovie className={css.icon} /> */}</div>
