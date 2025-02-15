@@ -8,7 +8,7 @@ interface MovieListProps {
 
 const MovieList = ({ movies }: MovieListProps) => {
   return (
-    <ul>
+    <ul className="grid grid-cols-4 gap-2.5">
       {movies.map(({ id, backdrop_path, title }) => {
         if (id === undefined || !backdrop_path) return null;
         return (

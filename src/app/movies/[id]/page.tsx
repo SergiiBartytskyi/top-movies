@@ -7,9 +7,9 @@ interface PageProps {
 const Page = async ({ params }: PageProps) => {
   const { id } = await params;
   return (
-    <main>
+    <>
       <h1>Movie {id}</h1>
-    </main>
+    </>
   );
 };
 

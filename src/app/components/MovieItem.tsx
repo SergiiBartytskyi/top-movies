@@ -10,13 +10,13 @@ interface MovieItemProps {
 
 const MovieItem = ({ id, backdrop_path, title }: MovieItemProps) => {
   return (
-    <Link href={`/movies/${id}`}>
+    <Link href={`/movies/${id}`} className="">
       {backdrop_path ? (
         <Image
           src={`https://image.tmdb.org/t/p/w300${backdrop_path}`}
           alt={title}
           height={300}
-          width={200}
+          width={300}
         />
       ) : (
         <div>{/* <BiSolidCameraMovie className={css.icon} /> */}</div>

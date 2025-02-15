@@ -4,9 +4,9 @@ interface PageProps {}
 
 const Page = ({}: PageProps) => {
   return (
-    <main>
-      <h1>Trending today</h1>
-    </main>
+    <>
+      <h1>Favourites Page</h1>
+    </>
   );
 };
 
