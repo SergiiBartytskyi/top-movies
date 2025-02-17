@@ -1,7 +1,8 @@
 import MovieList from '@/components/MovieList';
 
-const API_KEY =
-  'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YmI2Y2JjOWRlMDE3MjhjMTI1MGI0NjhlNWZmZGE5NSIsIm5iZiI6MTcyNDU0ODg5OS4wOTY3OCwic3ViIjoiNjYzOGJlZmVjOTA1NGYwMTJhOTE0ZTZiIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.uRKGHt-G275vGj2yyXMxDTemRdDZQ8D8ZonoeaxsG6g';
+const API_KEY = process.env.TMDB_API_KEY;
+// const API_KEY =
+//   'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YmI2Y2JjOWRlMDE3MjhjMTI1MGI0NjhlNWZmZGE5NSIsIm5iZiI6MTcyNDU0ODg5OS4wOTY3OCwic3ViIjoiNjYzOGJlZmVjOTA1NGYwMTJhOTE0ZTZiIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.uRKGHt-G275vGj2yyXMxDTemRdDZQ8D8ZonoeaxsG6g';
 
 const API_URL =
   'https://api.themoviedb.org/3/trending/movie/day?language=en-US';
@@ -14,12 +15,13 @@ const Home = async () => {
       Authorization: `Bearer ${API_KEY}`,
       'Content-Type': 'application/json',
     },
+    cache: 'no-store',
   });
-  const movies = await data.json();
+  const movies = (await data.json()).results;
   return (
     <>
       <h1 className="text-lg">Trending today</h1>
-      <MovieList movies={movies.results} />
+      <MovieList movies={movies} />
     </>
   );
 };

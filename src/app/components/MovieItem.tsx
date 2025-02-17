@@ -4,16 +4,23 @@ import React from 'react';
 
 interface MovieItemProps {
   id: number;
-  backdrop_path: string;
+  poster_path: string;
   title: string;
+  release_date: string;
 }
 
-const MovieItem = ({ id, backdrop_path, title }: MovieItemProps) => {
+const MovieItem = ({
+  id,
+  poster_path,
+  title,
+  release_date,
+}: MovieItemProps) => {
+  const release = new Date(release_date).getFullYear();
   return (
-    <Link href={`/movies/${id}`} className="">
-      {backdrop_path ? (
+    <Link href={`/movies/${id}`}>
+      {poster_path ? (
         <Image
-          src={`https://image.tmdb.org/t/p/w300${backdrop_path}`}
+          src={`https://image.tmdb.org/t/p/w500${poster_path}`}
           alt={title}
           height={300}
           width={300}
@@ -21,7 +28,8 @@ const MovieItem = ({ id, backdrop_path, title }: MovieItemProps) => {
       ) : (
         <div>{/* <BiSolidCameraMovie className={css.icon} /> */}</div>
       )}
-      <h3>{title}</h3>
+      <h3 className="font-bold">{title}</h3>
+      <p>{release} </p>
     </Link>
   );
 };
