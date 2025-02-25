@@ -8,6 +8,7 @@ import Image from 'next/image';
 import SubNavigation from '@/app/components/SubNavigation';
 interface PageProps {
   params: Promise<{ id: string }>;
+  // params: { id: string };
 }
 
 const API_KEY =
@@ -18,8 +19,8 @@ const API_URL = 'https://api.themoviedb.org/3';
 const Page = ({ params }: PageProps) => {
   const router = useRouter();
   const { id } = React.use(params);
+  // const { id } = params;
   const [movie, setMovie] = useState<Movie | null>(null);
-  // const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (!id) return;
@@ -34,12 +35,9 @@ const Page = ({ params }: PageProps) => {
       .then((res) => res.json())
       .then((data) => {
         setMovie(data || []);
-        console.log('data :>> ', data);
-        // setLoading(false);
       })
       .catch((err) => {
         console.error('Error fetching movie:', err);
-        // setLoading(false);
       });
   }, [id]);
 
@@ -49,7 +47,6 @@ const Page = ({ params }: PageProps) => {
 
   const { title, release_date, poster_path, vote_average, overview, genres } =
     movie;
-  console.log('poster_path :>> ', poster_path);
   const releaseYear = new Date(release_date).getFullYear() || '-';
   const titleWithYear = `${title} (${releaseYear})`;
   return (
@@ -60,7 +57,6 @@ const Page = ({ params }: PageProps) => {
       >
         Go Back
       </button>
-      <h1>Movie {id}</h1>
 
       <div>
         {movie.poster_path ? (

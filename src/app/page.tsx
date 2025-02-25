@@ -1,4 +1,5 @@
 import MovieList from '@/components/MovieList';
+import HeroSection from './components/HeroSection';
 
 const API_KEY = process.env.TMDB_API_KEY;
 // const API_KEY =
@@ -17,9 +18,27 @@ const Home = async () => {
     },
     cache: 'no-store',
   });
+  if (!data.ok) throw new Error('Failed to fetch data');
+
   const movies = (await data.json()).results;
+
+  const randomNumber = () => {
+    return Math.floor(Math.random() * 20);
+  };
+
+  const { id, original_title, description, backdrop_path } =
+    movies[randomNumber()];
+  const posterUrl = `https://image.tmdb.org/t/p/original/${backdrop_path}`;
+  // console.log('randomMovie :>> ', randomMovie);
+  // console.log('posterUrl :>> ', posterUrl);
   return (
     <>
+      <HeroSection
+        id={id}
+        original_title={original_title}
+        description={description}
+        posterUrl={posterUrl}
+      />
       <h1 className="text-lg">Trending today</h1>
       <MovieList movies={movies} />
     </>
