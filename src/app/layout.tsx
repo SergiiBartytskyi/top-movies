@@ -31,11 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${workSans.variable} antialiased  max-w-screen-xl mx-auto`}
+        className={`${geistSans.variable} ${geistMono.variable} ${workSans.variable} antialiased mx-auto`}
       >
         <Header />
         {/* <main className="flex flex-col justify-center items-center gap-2.5"> */}
-        <main className="container mx-auto px-4 py-8">{children}</main>
+        <main>{children}</main>
         {/* <Footer/> */}
       </body>
     </html>

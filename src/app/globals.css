@@ -17,6 +17,15 @@
 }
 
 
+@layer components {
+  .hero {
+    @apply h-[380px] md:h-[432px] lg:h-[720px] relative mx-auto;
+  }
+
+  .section-container {
+    @apply container flex justify-center items-center flex-col max-w-[1440px] mx-auto px-4 md:px-6 lg:px-10 py-4 md:py-6 lg:py-10 text-center h-full text-white;
+  }
+}
 
 body {
   color: var(--foreground);
