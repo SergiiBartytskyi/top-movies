@@ -30,8 +30,7 @@ const Home = async () => {
   const { id, original_title, backdrop_path, vote_average, overview } =
     movies[randomNumber()];
   const posterUrl = `https://image.tmdb.org/t/p/original/${backdrop_path}`;
-  console.log('randomMovie :>> ', movies[randomNumber()]);
-  // console.log('posterUrl :>> ', posterUrl);
+
   return (
     <>
       <HeroSection
@@ -42,7 +41,6 @@ const Home = async () => {
         vote_average={vote_average}
       />
 
-      {/* <MovieList movies={movies} /> */}
       <TrendingSection movies={movies} />
     </>
   );
