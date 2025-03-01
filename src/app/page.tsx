@@ -1,5 +1,6 @@
 import MovieList from '@/components/MovieList';
 import HeroSection from './components/HeroSection';
+import TrendingSection from './components/TrendingSection';
 
 const API_KEY = process.env.TMDB_API_KEY;
 // const API_KEY =
@@ -40,8 +41,9 @@ const Home = async () => {
         overview={overview}
         vote_average={vote_average}
       />
-      <h1 className="text-lg">Trending today</h1>
-      <MovieList movies={movies} />
+
+      {/* <MovieList movies={movies} /> */}
+      <TrendingSection movies={movies} />
     </>
   );
 };

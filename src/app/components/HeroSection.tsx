@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 type HeroSectionProps = {
@@ -17,14 +16,14 @@ const HeroSection = ({
   vote_average,
 }: HeroSectionProps) => {
   const heroStyles = {
-    background: `linear-gradient(86deg, #111111 20%, rgba(17, 17, 17, 0) 80%), url(${posterUrl})`,
+    backgroundImage: `linear-gradient(86deg, #111111 20%, rgba(17, 17, 17, 0) 80%), url(${posterUrl})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   };
   const hero_overview = `${overview.slice(0, 100)}...`;
   const hero_vote = vote_average.toFixed(1);
   return (
-    <section className="hero ">
+    <section className="hero">
       <div
         className="section-container items-start justify-end"
         style={heroStyles}

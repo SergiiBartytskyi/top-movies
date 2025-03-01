@@ -34,7 +34,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${workSans.variable} antialiased mx-auto`}
       >
         <Header />
-        {/* <main className="flex flex-col justify-center items-center gap-2.5"> */}
+
         <main>{children}</main>
         {/* <Footer/> */}
       </body>
