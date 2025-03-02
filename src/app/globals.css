@@ -23,7 +23,7 @@
   }
 
   .footer {
-    @apply h-32 md:h-[432px] lg:h-[720px] relative mx-auto;
+    @apply h-32 relative mx-auto;
   }
 
   .section {

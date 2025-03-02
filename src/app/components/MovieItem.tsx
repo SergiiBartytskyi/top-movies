@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import { BiSolidCameraMovie } from 'react-icons/bi';
 
 interface MovieItemProps {
   id: number;
@@ -20,13 +21,13 @@ const MovieItem = ({
     <Link href={`/movies/${id}`}>
       {poster_path ? (
         <Image
-          src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+          src={`https://image.tmdb.org/t/p/w300${poster_path}`}
           alt={title}
           height={300}
           width={300}
         />
       ) : (
-        <div>{/* <BiSolidCameraMovie className={css.icon} /> */}</div>
+        <div>{<BiSolidCameraMovie />}</div>
       )}
       <h3 className="font-bold">{title}</h3>
       <p>{release} </p>

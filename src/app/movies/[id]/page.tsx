@@ -6,9 +6,9 @@ import { Movie } from '@/type';
 import Loader from './loading';
 import Image from 'next/image';
 import SubNavigation from '@/app/components/SubNavigation';
+import { BiSolidCameraMovie } from 'react-icons/bi';
 interface PageProps {
   params: Promise<{ id: string }>;
-  // params: { id: string };
 }
 
 const API_KEY =
@@ -19,7 +19,6 @@ const API_URL = 'https://api.themoviedb.org/3';
 const Page = ({ params }: PageProps) => {
   const router = useRouter();
   const { id } = React.use(params);
-  // const { id } = params;
   const [movie, setMovie] = useState<Movie | null>(null);
 
   useEffect(() => {
@@ -61,13 +60,13 @@ const Page = ({ params }: PageProps) => {
       <div>
         {movie.poster_path ? (
           <Image
-            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+            src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
             alt={movie.title}
             width={300}
             height={100}
           />
         ) : (
-          <div>{/* <BiSolidCameraMovie className={css.icon} /> */}</div>
+          <div>{<BiSolidCameraMovie />}</div>
         )}
 
         <div>

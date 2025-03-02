@@ -15,7 +15,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex gap-2">
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Search for a movie..."
@@ -25,7 +25,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
       />
       <button
         type="submit"
-        className="px-4 py-2 bg-blue-500 text-white rounded"
+        className="px-4 py-2 bg-green-500 text-white rounded"
       >
         Search
       </button>
