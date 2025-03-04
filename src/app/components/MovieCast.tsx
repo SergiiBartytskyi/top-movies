@@ -21,6 +21,7 @@ const MovieCast = async (id: MovieCastProps) => {
                     alt={name}
                     width={200}
                     height={300}
+                    style={{ height: 'auto' }}
                   />
                 ) : (
                   <div>

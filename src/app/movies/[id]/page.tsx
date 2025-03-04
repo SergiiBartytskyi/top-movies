@@ -63,7 +63,9 @@ const Page = ({ params }: PageProps) => {
             src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
             alt={movie.title}
             width={300}
-            height={100}
+            height={450}
+            style={{ height: 'auto' }}
+            priority
           />
         ) : (
           <div>{<BiSolidCameraMovie />}</div>

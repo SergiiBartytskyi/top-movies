@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useState } from 'react';
 
 interface Genre {
@@ -12,7 +14,7 @@ interface GenresSearchProps {
 const API_KEY =
   'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1YmI2Y2JjOWRlMDE3MjhjMTI1MGI0NjhlNWZmZGE5NSIsIm5iZiI6MTcyNDU0ODg5OS4wOTY3OCwic3ViIjoiNjYzOGJlZmVjOTA1NGYwMTJhOTE0ZTZiIiwic2NvcGVzIjpbImFwaV9yZWFkIl0sInZlcnNpb24iOjF9.uRKGHt-G275vGj2yyXMxDTemRdDZQ8D8ZonoeaxsG6g';
 
-// const API_URL = `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en-US`;
+const API_URL = `https://api.themoviedb.org/3/genre/movie/list?language=en-US`;
 
 const GenresSearch = ({ handleGenreSearch }: GenresSearchProps) => {
   const [genres, setGenres] = useState<Genre[]>([]);
@@ -21,15 +23,12 @@ const GenresSearch = ({ handleGenreSearch }: GenresSearchProps) => {
   useEffect(() => {
     const fetchGenres = async () => {
       try {
-        const response = await fetch(
-          'https://api.themoviedb.org/3/genre/movie/list?language=en-US',
-          {
-            headers: {
-              Authorization: `Bearer ${API_KEY}`,
-              'Content-Type': 'application/json',
-            },
+        const response = await fetch(`${API_URL}`, {
+          headers: {
+            Authorization: `Bearer ${API_KEY}`,
+            'Content-Type': 'application/json',
           },
-        );
+        });
         const data = await response.json();
         if (data && data.genres) {
           setGenres(data.genres);
@@ -45,6 +44,7 @@ const GenresSearch = ({ handleGenreSearch }: GenresSearchProps) => {
   }, []);
 
   const handleGenreChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    e.preventDefault();
     const genreId = e.target.value;
     setSelectedGenre(genreId);
 

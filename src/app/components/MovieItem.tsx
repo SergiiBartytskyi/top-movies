@@ -23,8 +23,9 @@ const MovieItem = ({
         <Image
           src={`https://image.tmdb.org/t/p/w300${poster_path}`}
           alt={title}
-          height={300}
           width={300}
+          height={450}
+          style={{ height: 'auto' }}
         />
       ) : (
         <div>{<BiSolidCameraMovie />}</div>

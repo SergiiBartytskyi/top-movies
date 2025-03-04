@@ -7,21 +7,26 @@ interface SearchBarProps {
 }
 
 const SearchBar = ({ onSearch }: SearchBarProps) => {
-  const [inputValue, setInputValue] = useState('');
+  const [query, setQuery] = useState('');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSearch(inputValue);
+
+    if (!query.trim()) return;
+
+    onSearch(query);
+    setQuery('');
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <input
         type="text"
+        name="query"
         placeholder="Search for a movie..."
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
         className="flex-1 p-2 border rounded text-[#171717]"
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
       />
       <button
         type="submit"

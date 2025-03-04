@@ -16,7 +16,7 @@ const HeroSection = ({
   vote_average,
 }: HeroSectionProps) => {
   const heroStyles = {
-    backgroundImage: `linear-gradient(86deg, #111111 20%, rgba(17, 17, 17, 0) 80%), url(${posterUrl})`,
+    backgroundImage: `linear-gradient(86deg, #111111 20%, rgba(17, 17, 17, 0) 80%), url(https://image.tmdb.org/t/p/original${posterUrl})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   };
