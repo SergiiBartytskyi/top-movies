@@ -12,7 +12,7 @@ const MovieList = ({ movies }: MovieListProps) => {
       {movies.map(({ id, poster_path, title, release_date }) => {
         if (id === undefined || !poster_path) return null;
         return (
-          <li key={id}>
+          <li key={id} className="flex items-center justify-center">
             <MovieItem
               id={id}
               poster_path={poster_path}

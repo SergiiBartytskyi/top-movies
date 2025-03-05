@@ -31,7 +31,7 @@
   }
 
   .section-container {
-    @apply container flex justify-center items-center flex-col w-full mx-auto px-4 md:px-6 lg:px-10 py-4 md:py-6 lg:py-10 text-center h-full text-white;
+    @apply container w-full h-full mx-auto px-4 md:px-6 lg:px-10 py-4 md:py-6 lg:py-10 text-center text-white;
   }
 }
 

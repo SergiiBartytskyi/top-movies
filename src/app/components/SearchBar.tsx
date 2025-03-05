@@ -1,5 +1,6 @@
 'use client';
 
+import { cn } from '@/utils/utils';
 import React, { useState } from 'react';
 
 interface SearchBarProps {

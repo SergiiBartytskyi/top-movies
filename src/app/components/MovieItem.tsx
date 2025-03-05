@@ -26,6 +26,7 @@ const MovieItem = ({
           width={300}
           height={450}
           style={{ height: 'auto' }}
+          className="w-[300px]"
         />
       ) : (
         <div>{<BiSolidCameraMovie />}</div>
