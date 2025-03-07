@@ -8,8 +8,8 @@ interface NavigationProps {}
 const Navigation = ({}: NavigationProps) => {
   const pathname = usePathname();
   return (
-    <nav aria-label="Main Navigation" className="flex justify-center gap-2.5 ">
-      <ul className="flex gap-2.5">
+    <nav aria-label="Main Navigation" className="flex justify-center">
+      <ul className="flex gap-2">
         <li className="hover:underline">
           <Link
             href={`/`}

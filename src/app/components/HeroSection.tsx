@@ -30,14 +30,14 @@ const HeroSection = ({
         />
 
         <div className="absolute inset-0 w-full h-full bg-[linear-gradient(90deg,rgba(17,17,17,0.7)_25%,rgba(17,17,17,0)_100%)]"></div>
-        <div className="absolute flex flex-col justify-center items-start gap-2  z-10">
+        <div className="absolute flex flex-col justify-center items-start gap-2 z-10 text-[#ffffff]">
           <h1 className="text-base md:text-2xl font-bold mb-1 md:mb-2">
             {original_title}
           </h1>
           <p className="text-base">{hero_vote}/10</p>
 
           <p className="w-full h-auto text-base text-left mb-1 md:hidden">
-            {hero_overview}...
+            {hero_overview}
           </p>
 
           <p className="w-full h-auto text-base text-left mb-2 hidden md:block">

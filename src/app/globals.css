@@ -9,13 +9,16 @@
   --foreground: #171717;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
+} */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
-
 
 @layer components {
   .hero {
@@ -31,7 +34,7 @@
   }
 
   .section-container {
-    @apply container w-full h-full mx-auto px-4 md:px-6 lg:px-10 py-4 md:py-6 lg:py-10 text-center text-white;
+    @apply container w-full h-full mx-auto px-4 md:px-6 lg:px-10 py-4 md:py-6 lg:py-10 text-center;
   }
 }
 

@@ -12,7 +12,10 @@ const MovieList = ({ movies }: MovieListProps) => {
       {movies.map(({ id, poster_path, title, release_date }) => {
         if (id === undefined || !poster_path) return null;
         return (
-          <li key={id} className="flex items-center justify-center">
+          <li
+            key={id}
+            className="flex items-center justify-center overflow-hidden rounded-2xl border border-solid transition-all duration-300 hover:shadow-lg focus:shadow-lg hover:scale-105"
+          >
             <MovieItem
               id={id}
               poster_path={poster_path}

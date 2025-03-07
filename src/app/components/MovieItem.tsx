@@ -31,8 +31,10 @@ const MovieItem = ({
       ) : (
         <div>{<BiSolidCameraMovie />}</div>
       )}
-      <h3 className="font-bold">{title}</h3>
-      <p>{release} </p>
+      <div className="p-3">
+        <h3 className="font-bold">{title}</h3>
+        <p>{release}</p>
+      </div>
     </Link>
   );
 };
