@@ -8,13 +8,13 @@ interface MovieListProps {
 
 const MovieList = ({ movies }: MovieListProps) => {
   return (
-    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mx-auto">
+    <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[15px] mx-auto">
       {movies.map(({ id, poster_path, title, release_date }) => {
         if (id === undefined || !poster_path) return null;
         return (
           <li
             key={id}
-            className="flex items-center justify-center overflow-hidden rounded-2xl border border-solid transition-all duration-300 hover:shadow-lg focus:shadow-lg hover:scale-105"
+            className="flex items-center justify-center overflow-hidden rounded-2xl border border-solid transition-all duration-300 hover:shadow-lg focus:shadow-lg hover:scale-105 max-w-max"
           >
             <MovieItem
               id={id}
