@@ -1,7 +1,7 @@
 'use client';
 
-import { cn } from '@/lib/utils/utils';
 import React, { useState } from 'react';
+import Button from './ui/tooltip/button';
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
@@ -20,21 +20,26 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-2 justify-center items-center"
+    >
       <input
         type="text"
         name="query"
         placeholder="Search for a movie..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="flex-1 p-2 border rounded text-[#171717]"
+        className="w-56 p-2 border rounded-lg focus:outline-blue-600 bg-inherit text-inherit"
       />
-      <button
+      <Button
         type="submit"
-        className="px-4 py-2 bg-green-500 text-white rounded"
+        className="w-32"
+        variant={query.trim() ? 'primary' : 'ghost'}
+        disabled={!query.trim()}
       >
         Search
-      </button>
+      </Button>
     </form>
   );
 };

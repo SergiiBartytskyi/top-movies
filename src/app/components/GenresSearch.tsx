@@ -54,11 +54,11 @@ const GenresSearch = ({ handleGenreSearch }: GenresSearchProps) => {
   };
 
   return (
-    <form className="flex gap-2">
+    <form>
       <select
         value={selectedGenre}
         onChange={handleGenreChange}
-        className="p-2 border rounded text-[#171717]"
+        className="p-3 border rounded-lg focus:outline-blue-600 bg-background text-foreground "
       >
         <option value="">Select a genre</option>
         {genres.map((genre) => (

@@ -19,7 +19,8 @@ const Button: React.FC<ButtonProps> = ({
       className={cn(
         'flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium transition-all duration-300',
         {
-          'bg-blue-500 text-white hover:bg-blue-600': variant === 'primary',
+          'bg-[var(--primary-bg)] text-[var(--primary-color)] hover:bg-[var(--primary-bg-hover)]':
+            variant === 'primary',
           'bg-gray-200 text-gray-800 hover:bg-gray-300':
             variant === 'secondary',
           'border border-blue-500 text-blue-500 hover:bg-blue-100':

@@ -76,8 +76,10 @@ const Page = ({}: PageProps) => {
     <>
       <h1>Movies Page</h1>
 
-      <SearchBar onSearch={setQuery} />
-      <GenresSearch handleGenreSearch={setGenreId} />
+      <div className="flex flex-col gap-3 md:flex-row justify-center items-center mb-4">
+        <GenresSearch handleGenreSearch={setGenreId} />
+        <SearchBar onSearch={setQuery} />
+      </div>
       {loading && <p>Loading...</p>}
       <MovieList movies={movies} />
     </>
