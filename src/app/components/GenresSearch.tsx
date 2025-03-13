@@ -54,13 +54,13 @@ const GenresSearch = ({ handleGenreSearch }: GenresSearchProps) => {
   };
 
   return (
-    <form>
+    <form className="h-[40px]">
       <select
         value={selectedGenre}
         onChange={handleGenreChange}
-        className="p-3 border rounded-lg focus:outline-blue-600 bg-background text-foreground "
+        className="p-2 border rounded-lg focus:outline-blue-600 bg-background text-foreground "
       >
-        <option value="">Select a genre</option>
+        <option value="">Genre</option>
         {genres.map((genre) => (
           <option key={genre.id} value={genre.id.toString()}>
             {genre.name}
