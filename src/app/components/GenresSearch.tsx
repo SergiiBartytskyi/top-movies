@@ -54,20 +54,18 @@ const GenresSearch = ({ handleGenreSearch }: GenresSearchProps) => {
   };
 
   return (
-    <form className="h-[40px]">
-      <select
-        value={selectedGenre}
-        onChange={handleGenreChange}
-        className="p-2 border rounded-lg focus:outline-blue-600 bg-background text-foreground "
-      >
-        <option value="">Genre</option>
-        {genres.map((genre) => (
-          <option key={genre.id} value={genre.id.toString()}>
-            {genre.name}
-          </option>
-        ))}
-      </select>
-    </form>
+    <select
+      value={selectedGenre}
+      onChange={handleGenreChange}
+      className="p-2 border rounded-lg focus:outline-blue-600 bg-background text-foreground "
+    >
+      <option value="">Genre</option>
+      {genres.map((genre) => (
+        <option key={genre.id} value={genre.id.toString()}>
+          {genre.name}
+        </option>
+      ))}
+    </select>
   );
 };
 
