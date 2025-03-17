@@ -28,7 +28,7 @@ const SearchBar = ({ onSearch }: SearchBarProps) => {
         placeholder="Search for a movie..."
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="w-56 p-2 border rounded-lg focus:outline-blue-600 bg-inherit text-inherit h-[40px]"
+        className="w-56 p-2 outline-0 border rounded-lg border-solid transition-colors easy-in-out duration-300 focus:border-blue-600"
       />
 
       <Button className="flex justify-center items-center">

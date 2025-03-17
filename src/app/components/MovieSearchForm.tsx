@@ -90,13 +90,14 @@ const MovieSearchForm = ({ onSearch }: MovieSearchFormProps) => {
           placeholder="Year"
           value={year}
           onChange={(e) => setYear(e.target.value)}
-          className="w-[120px] p-2 border rounded-lg focus:outline-blue-600 bg-inherit text-inherit h-[40px]"
+          className="w-[120px] p-2 outline-0 border rounded-lg border-solid transition-colors easy-in-out duration-300 focus:border-blue-600 bg-background placeholder:text-[--foreground]"
         />
 
         <select
           value={selectedGenre}
           onChange={(e) => setSelectedGenre(e.target.value)}
-          className="w-40 p-2 border rounded-lg focus:outline-blue-600 bg-background text-foreground h-[40px]"
+          className="w-40 p-2 outline-0 border rounded-lg border-solid transition-colors easy-in-out duration-300 focus:border-blue-600 bg-background text-foreground"
+          // className="w-40 p-2 border rounded-lg focus:outline-blue-600 bg-background text-foreground h-[40px]"
         >
           <option value="">Genre</option>
           {genres.map((genre) => (
